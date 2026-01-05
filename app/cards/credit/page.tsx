@@ -1,195 +1,159 @@
 import styles from "./credit.module.css";
 
-export default function CreditPage() {
+export default function CreditCardPage() {
   return (
     <main className={styles.wrapper}>
       {/* HERO */}
       <section className={styles.hero}>
-        <div className={styles.card}>
-          <div className={styles.topRow}>
-            <span className={styles.bank}>CARDVERSE BANK</span>
-            <span className={styles.issuerTop}>CARDVERSE ISSUER</span>
+        <div className={styles.heroCard}>
+          <p className={styles.issuer}>CARDVERSE ISSUER</p>
+          <h1 className={styles.cardNumber}>4321 9876 5678 1234</h1>
+          <div className={styles.cardFooter}>
+            <span>ROHAN SAKHARE</span>
+            <span className={styles.type}>CREDIT</span>
           </div>
+        </div>
 
-          <div className={styles.number}>
-            5432&nbsp;1098&nbsp;7654&nbsp;3210
-          </div>
+        <h1 className={styles.title}>Credit Card</h1>
+        <p className={styles.subtitle}>
+          Spend now, pay later. A complete deep-dive into credit card working,
+          transaction flow, settlement, billing cycles, risks and controls.
+        </p>
 
-          <div className={styles.footer}>
-            <div>
-              <span>Card Holder</span>
-              <strong>ROHAN SAKHARE</strong>
-            </div>
-            <div className={styles.type}>CREDIT</div>
-          </div>
+        <p className={styles.disclaimer}>
+          ⚠️ Disclaimer: CardVerse is NOT a real bank or issuer. This website is
+          created only for educational purposes to explain card concepts and
+          transaction flows.
+        </p>
+
+        <p className={styles.author}>Developed by Rohan Sakhare</p>
+      </section>
+
+      {/* WHAT IS CREDIT CARD */}
+      <section className={styles.section}>
+        <h2>What is a Credit Card?</h2>
+        <p>
+          A credit card is a payment instrument that allows a customer to make
+          purchases using money provided temporarily by the issuing bank.
+          Unlike a debit card, the amount is NOT deducted immediately from your
+          bank account.
+        </p>
+
+        <p>
+          Instead, the bank gives you a <b>credit limit</b>. You can spend within
+          this limit and repay the amount later, either fully or partially,
+          based on the billing cycle.
+        </p>
+      </section>
+
+      {/* KEY COMPONENTS */}
+      <section className={styles.section}>
+        <h2>Key Components of a Credit Card</h2>
+        <ul>
+          <li><b>Cardholder:</b> Customer using the credit card</li>
+          <li><b>Issuer Bank:</b> Bank that issues the card</li>
+          <li><b>Card Network:</b> Visa / Mastercard / RuPay / Amex</li>
+          <li><b>Merchant:</b> Shop or website accepting card payment</li>
+          <li><b>Acquirer Bank:</b> Merchant’s bank</li>
+          <li><b>Credit Limit:</b> Maximum amount allowed to spend</li>
+        </ul>
+      </section>
+
+      {/* TRANSACTION FLOW */}
+      <section className={styles.section}>
+        <h2>Credit Card Transaction Flow (Step-by-Step)</h2>
+
+        <div className={styles.flow}>
+          <p><b>Step 1:</b> Cardholder swipes / taps / enters card details</p>
+          <p><b>Step 2:</b> Merchant sends transaction to Acquirer Bank</p>
+          <p><b>Step 3:</b> Acquirer forwards request to Card Network</p>
+          <p><b>Step 4:</b> Network routes request to Issuer Bank</p>
+          <p><b>Step 5:</b> Issuer checks credit limit, fraud rules, CVV, expiry</p>
+          <p><b>Step 6:</b> Issuer approves or declines transaction</p>
+          <p><b>Step 7:</b> Response travels back to merchant</p>
         </div>
       </section>
 
-      {/* CONTENT */}
-      <section className={styles.content}>
-        {/* INTRO */}
-        <div className={styles.block}>
-          <h2>What is a Credit Card?</h2>
-          <p>
-            A credit card allows a customer to spend money using a predefined
-            credit limit provided by the issuing bank. Unlike debit cards,
-            transactions are not immediately debited from the customer’s bank
-            account.
-          </p>
-          <p>
-            Instead, the issuer bank pays the merchant on behalf of the customer,
-            and the customer repays the bank later according to the billing
-            cycle.
-          </p>
-        </div>
+      {/* AUTHORIZATION VS SETTLEMENT */}
+      <section className={styles.section}>
+        <h2>Authorization vs Settlement</h2>
+        <p>
+          <b>Authorization</b> means the bank blocks the amount from your credit
+          limit but does not take money yet.
+        </p>
+        <p>
+          <b>Settlement</b> happens later when merchant submits transactions in
+          batch and money is transferred between banks.
+        </p>
+      </section>
 
-        {/* WHY CREDIT */}
-        <div className={styles.block}>
-          <h2>Why Banks Issue Credit Cards</h2>
-          <ul>
-            <li>Generate interest and fee-based revenue</li>
-            <li>Enable short-term unsecured credit</li>
-            <li>Increase customer spending power</li>
-            <li>Build long-term customer relationships</li>
-          </ul>
-        </div>
+      {/* BILLING CYCLE */}
+      <section className={styles.section}>
+        <h2>Billing Cycle & Due Date</h2>
+        <p>
+          Credit cards work on a monthly billing cycle (usually 30 days). All
+          transactions during this period are added to your statement.
+        </p>
+        <p>
+          After the statement is generated, you get a <b>grace period</b> (15–20
+          days) to pay without interest.
+        </p>
+      </section>
 
-        {/* KEY CONCEPTS */}
-        <div className={styles.block}>
-          <h2>Important Credit Card Concepts</h2>
-          <ul>
-            <li><strong>Credit Limit:</strong> Maximum spend allowed</li>
-            <li><strong>Outstanding Amount:</strong> Amount currently owed</li>
-            <li><strong>Billing Cycle:</strong> Monthly statement period</li>
-            <li><strong>Due Date:</strong> Last date to repay without penalty</li>
-            <li><strong>Minimum Due:</strong> Minimum payment required</li>
-          </ul>
-        </div>
+      {/* INTEREST */}
+      <section className={styles.section}>
+        <h2>Interest & Minimum Due</h2>
+        <p>
+          If full payment is not done before due date, interest is charged on
+          outstanding amount. Interest rates are usually high.
+        </p>
+        <p>
+          Paying only <b>minimum due</b> avoids late fees but interest continues
+          on remaining balance.
+        </p>
+      </section>
 
-        {/* PARTICIPANTS */}
-        <div className={styles.block}>
-          <h2>Entities Involved in a Credit Card Transaction</h2>
-          <ul>
-            <li><strong>Cardholder:</strong> Customer using the credit card</li>
-            <li><strong>Merchant / POS:</strong> Where the transaction happens</li>
-            <li><strong>Acquirer Bank:</strong> Bank of the merchant</li>
-            <li><strong>Payment Switch:</strong> Routes transaction messages</li>
-            <li><strong>Network:</strong> Routing & settlement layer</li>
-            <li><strong>Issuer Bank:</strong> Bank providing credit</li>
-            <li><strong>Card Management System:</strong> Credit account logic</li>
-          </ul>
-        </div>
+      {/* SECURITY */}
+      <section className={styles.section}>
+        <h2>Security & Fraud Protection</h2>
+        <ul>
+          <li>CVV & Expiry validation</li>
+          <li>OTP / 3-D Secure</li>
+          <li>Velocity & risk checks</li>
+          <li>Tokenization</li>
+          <li>Chargeback mechanism</li>
+        </ul>
+      </section>
 
-        {/* AUTHORIZATION */}
-        <div className={styles.block}>
-          <h2>Authorization Phase (Credit Check)</h2>
-          <p>
-            During authorization, the issuer bank validates whether the
-            transaction can be approved based on:
-          </p>
-          <ul>
-            <li>Card validity and status</li>
-            <li>Available credit limit</li>
-            <li>Fraud rules and risk checks</li>
-            <li>Transaction amount and merchant category</li>
-          </ul>
-        </div>
+      {/* ADVANTAGES */}
+      <section className={styles.section}>
+        <h2>Advantages of Credit Cards</h2>
+        <ul>
+          <li>Buy now, pay later convenience</li>
+          <li>Build credit score</li>
+          <li>Rewards & cashback</li>
+          <li>Purchase protection</li>
+        </ul>
+      </section>
 
-        {/* POS FLOW */}
-        <div className={styles.block}>
-          <h2>Credit Card POS Transaction – Step by Step</h2>
+      {/* RISKS */}
+      <section className={styles.section}>
+        <h2>Risks & Responsible Usage</h2>
+        <ul>
+          <li>Overspending</li>
+          <li>High interest debt</li>
+          <li>Late payment penalties</li>
+        </ul>
+      </section>
 
-          <div className={styles.flow}>
-            <span>Customer</span>
-            <span>POS</span>
-            <span>Acquirer</span>
-            <span>Network</span>
-            <span>Issuer</span>
-          </div>
-
-          <ol>
-            <li>Customer taps or inserts credit card</li>
-            <li>POS sends transaction to Acquirer Bank</li>
-            <li>Acquirer routes transaction via Network</li>
-            <li>Issuer checks credit limit and fraud rules</li>
-            <li>Issuer sends approval or decline</li>
-            <li>Merchant receives confirmation</li>
-            <li>Transaction is recorded as outstanding</li>
-          </ol>
-        </div>
-
-        {/* ONLINE FLOW */}
-        <div className={styles.block}>
-          <h2>Credit Card Online (E-Commerce) Transaction</h2>
-          <ol>
-            <li>Customer enters card details</li>
-            <li>Merchant sends request to Payment Gateway</li>
-            <li>Gateway forwards to Acquirer</li>
-            <li>Network routes to Issuer</li>
-            <li>Issuer triggers OTP / risk checks</li>
-            <li>Issuer approves based on credit limit</li>
-          </ol>
-        </div>
-
-        {/* BILLING */}
-        <div className={styles.block}>
-          <h2>Billing Cycle & Statement Generation</h2>
-          <p>
-            All approved credit card transactions are accumulated during the
-            billing cycle. At the end of the cycle:
-          </p>
-          <ul>
-            <li>Statement is generated</li>
-            <li>Total outstanding is calculated</li>
-            <li>Minimum due amount is defined</li>
-            <li>Payment due date is communicated</li>
-          </ul>
-        </div>
-
-        {/* PAYMENT */}
-        <div className={styles.block}>
-          <h2>Customer Repayment Flow</h2>
-          <ul>
-            <li>Customer pays full amount → No interest</li>
-            <li>Customer pays minimum due → Interest applied</li>
-            <li>Late payment → Penalty + interest</li>
-          </ul>
-        </div>
-
-        {/* FAILURE CASES */}
-        <div className={styles.block}>
-          <h2>Common Credit Card Decline Reasons</h2>
-          <ul>
-            <li>Credit limit exceeded</li>
-            <li>High fraud risk</li>
-            <li>Card blocked or expired</li>
-            <li>Incorrect authentication</li>
-          </ul>
-        </div>
-
-        {/* SETTLEMENT */}
-        <div className={styles.block}>
-          <h2>Clearing and Settlement</h2>
-          <p>
-            After authorization, settlement happens between issuer and acquirer
-            through the network. The issuer pays the acquirer, not the customer.
-          </p>
-          <ul>
-            <li>Issuer settles with acquirer</li>
-            <li>Customer repays issuer later</li>
-            <li>Interchange and fees are applied</li>
-          </ul>
-        </div>
-
-        {/* SUMMARY */}
-        <div className={styles.block}>
-          <h2>Summary</h2>
-          <p>
-            Credit cards introduce delayed payment, risk management, billing,
-            and interest calculations, making them more complex than debit
-            cards at both system and business levels.
-          </p>
-        </div>
+      {/* SUMMARY */}
+      <section className={styles.section}>
+        <h2>Summary</h2>
+        <p>
+          Credit cards are powerful financial tools when used responsibly. They
+          involve complex backend systems but provide simple and fast user
+          experience at the front.
+        </p>
       </section>
     </main>
   );
