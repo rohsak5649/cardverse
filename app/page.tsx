@@ -1,65 +1,81 @@
-import Image from "next/image";
+import Link from "next/link";
+import styles from "./page.module.css";
+
+const sections = [
+  {
+    title: "Bank Cards",
+    subtitle: "Core cards linked directly to bank accounts",
+    cards: [
+      { name: "Debit Card", link: "/cards/debit" },
+      { name: "Credit Card", link: "/cards/credit" },
+      { name: "Charge Card", link: "/cards/charge" },
+      { name: "ATM Card", link: "/cards/atm" },
+    ],
+  },
+  {
+    title: "Prepaid Cards",
+    subtitle: "Stored-value and controlled spending cards",
+    cards: [
+      { name: "Semi-Closed Prepaid", link: "/cards/semi-closed-prepaid" },
+      { name: "Open-Loop Prepaid", link: "/cards/open-loop-prepaid" },
+      { name: "Reloadable Prepaid", link: "/cards/reloadable-prepaid" },
+      { name: "Non-Reloadable Prepaid", link: "/cards/non-reloadable-prepaid" },
+      { name: "Gift Card", link: "/cards/gift-card" },
+      { name: "Payroll Card", link: "/cards/payroll-card" },
+    ],
+  },
+  {
+    title: "Corporate & Business",
+    subtitle: "Enterprise, travel and expense management cards",
+    cards: [
+      { name: "Corporate Card", link: "#" },
+      { name: "Fleet Card", link: "#" },
+      { name: "Travel Card", link: "#" },
+      { name: "Purchasing Card (P-Card)", link: "#" },
+    ],
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className={styles.page}>
+      {/* HERO */}
+      <section className={styles.hero}>
+        <h1>CardVerse</h1>
+        <p className={styles.tagline}>
+          Complete guide to payment cards and transaction flows
+        </p>
+
+        <p className={styles.disclaimer}>
+          Disclaimer: <strong>CardVerse</strong> is an educational platform.
+          This website does not issue cards and is not affiliated with any bank,
+          card network, or financial institution. All card types and transaction
+          flows are explained purely for learning and knowledge purposes.
+        </p>
+
+        <span className={styles.credit}>
+          Developed by Rohan Sakhare
+        </span>
+      </section>
+
+      {/* CONTENT */}
+      {sections.map((section) => (
+        <section key={section.title} className={styles.section}>
+          <div className={styles.sectionHeader}>
+            <h2>{section.title}</h2>
+            <p>{section.subtitle}</p>
+          </div>
+
+          <div className={styles.row}>
+            {section.cards.map((card) => (
+              <Link key={card.name} href={card.link} className={styles.card}>
+                <div className={styles.cardTitle}>{card.name}</div>
+                <div className={styles.cardLink}>View details →</div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ))}
+    </main>
   );
 }
