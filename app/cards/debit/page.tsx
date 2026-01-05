@@ -1,23 +1,24 @@
 import styles from "./debit.module.css";
 
-export default function DebitPage() {
+export default function DebitCardPage() {
   return (
     <main className={styles.wrapper}>
+
       {/* HERO */}
       <section className={styles.hero}>
         <div className={styles.card}>
           <div className={styles.topRow}>
             <span className={styles.bank}>CARDVERSE BANK</span>
-            <span className={styles.issuerTop}>CARDVERSE ISSUER</span>
+            <span className={styles.issuer}>VISA / RuPay</span>
           </div>
 
           <div className={styles.number}>
-            4321&nbsp;5678&nbsp;9012&nbsp;3456
+            4578&nbsp;92XX&nbsp;XXXX&nbsp;1209
           </div>
 
           <div className={styles.footer}>
             <div>
-              <span>Card Holder</span>
+              <span>Cardholder</span>
               <strong>ROHAN SAKHARE</strong>
             </div>
             <div className={styles.type}>DEBIT</div>
@@ -32,160 +33,181 @@ export default function DebitPage() {
         <div className={styles.block}>
           <h2>What is a Debit Card?</h2>
           <p>
-            A debit card is a payment instrument directly linked to a customer’s
-            bank account. Unlike credit cards, there is no credit line involved.
-            Every transaction is authorized in real time based on the available
-            balance in the account.
+            A Debit Card is a payment instrument issued by a bank that allows a
+            customer to spend money directly from their linked bank account.
+            Unlike credit cards, debit cards do not involve borrowing.
           </p>
           <p>
-            Debit card transactions are <strong>authorization-based</strong>,
-            meaning the issuer bank must explicitly approve each transaction
-            before money is debited.
+            Every transaction performed using a debit card results in a
+            real-time or near real-time debit of the customer’s account balance.
           </p>
         </div>
 
-        {/* WHY BANKS USE IT */}
+        {/* POSITIONING */}
         <div className={styles.block}>
-          <h2>Why Banks Issue Debit Cards</h2>
+          <h2>Debit Card Positioning</h2>
           <ul>
-            <li>Enable cashless payments</li>
-            <li>Reduce branch and cash handling load</li>
-            <li>Provide 24×7 access to funds</li>
-            <li>Integrate customers with digital payment networks</li>
+            <li><strong>Card Type:</strong> Bank Account Linked Card</li>
+            <li><strong>Funding Source:</strong> Customer Savings / Current Account</li>
+            <li><strong>Spending Limit:</strong> Available Account Balance</li>
+            <li><strong>Risk Model:</strong> Low risk (No credit exposure)</li>
           </ul>
         </div>
 
-        {/* PARTICIPANTS */}
+        {/* ENTITIES */}
         <div className={styles.block}>
-          <h2>Entities Involved in a Debit Card Transaction</h2>
+          <h2>Entities Involved in Debit Card Ecosystem</h2>
           <ul>
-            <li><strong>Cardholder:</strong> Customer who owns the debit card</li>
-            <li><strong>ATM / POS:</strong> Transaction capture device</li>
-            <li><strong>Acquirer Bank:</strong> Bank that owns the ATM or POS</li>
-            <li><strong>Acquirer Switch:</strong> Routes transactions from terminals</li>
-            <li><strong>Network:</strong> NPCI / internal network (demo)</li>
-            <li><strong>Issuer Switch:</strong> Bank-side transaction processor</li>
-            <li><strong>CBS:</strong> Core Banking System holding customer accounts</li>
+            <li><strong>Cardholder:</strong> Bank customer</li>
+            <li><strong>Issuing Bank:</strong> Card issuer & account holder</li>
+            <li><strong>Acquirer Bank:</strong> Merchant’s bank</li>
+            <li><strong>Payment Network:</strong> Visa / Mastercard / RuPay</li>
+            <li><strong>ATM / POS Terminal:</strong> Transaction initiation point</li>
+            <li><strong>Core Banking System (CBS):</strong> Balance & ledger system</li>
           </ul>
         </div>
 
-        {/* AUTHORIZATION */}
+        {/* TYPES */}
         <div className={styles.block}>
-          <h2>Authorization Phase (Most Critical)</h2>
-          <p>
-            Authorization is the real-time decision-making phase. During this
-            phase, the issuer bank verifies:
-          </p>
+          <h2>Types of Debit Cards</h2>
           <ul>
-            <li>Card validity</li>
-            <li>PIN or authentication data</li>
-            <li>Account status (active / blocked)</li>
-            <li>Available balance</li>
-            <li>Daily transaction limits</li>
+            <li>Domestic Debit Card</li>
+            <li>International Debit Card</li>
+            <li>Contactless Debit Card</li>
+            <li>Virtual Debit Card</li>
+            <li>EMV Chip Debit Card</li>
           </ul>
         </div>
 
-        {/* ATM FLOW */}
+        {/* ISSUANCE */}
         <div className={styles.block}>
-          <h2>ATM Debit Card Transaction – Complete Flow</h2>
-
-          <div className={styles.flow}>
-            <span>Customer</span>
-            <span>ATM</span>
-            <span>Acquirer Switch</span>
-            <span>Network</span>
-            <span>Issuer Switch</span>
-            <span>CBS</span>
-          </div>
-
+          <h2>Debit Card Issuance Flow</h2>
           <ol>
-            <li>Customer inserts card into ATM</li>
-            <li>ATM reads chip / magnetic data</li>
-            <li>Customer enters PIN</li>
-            <li>ATM encrypts PIN and creates transaction request</li>
-            <li>Request sent to Acquirer Switch</li>
-            <li>Acquirer routes request to Network</li>
-            <li>Network forwards request to Issuer Switch</li>
-            <li>Issuer Switch validates message format</li>
-            <li>Issuer Switch sends request to CBS</li>
-            <li>CBS checks balance and account status</li>
-            <li>CBS returns approval or decline</li>
-            <li>Response flows back to ATM</li>
-            <li>ATM dispenses cash if approved</li>
-            <li>Customer account is debited instantly</li>
+            <li>Customer opens bank account</li>
+            <li>KYC verification completed</li>
+            <li>Debit card generated by issuer</li>
+            <li>Card personalized (PAN, expiry, CVV)</li>
+            <li>Card dispatched to customer</li>
+            <li>Customer activates card via ATM / mobile banking</li>
           </ol>
         </div>
 
         {/* POS FLOW */}
         <div className={styles.block}>
-          <h2>POS Debit Card Transaction – Complete Flow</h2>
+          <h2>POS Transaction Flow (MOST IMPORTANT)</h2>
+
+          <div className={styles.flow}>
+            <span>Cardholder</span>
+            <span>POS</span>
+            <span>Acquirer</span>
+            <span>Network</span>
+            <span>Issuer</span>
+            <span>CBS</span>
+          </div>
+
           <ol>
-            <li>Customer taps or inserts card</li>
-            <li>POS reads EMV data</li>
-            <li>Transaction sent to Acquirer</li>
-            <li>Acquirer routes to Network</li>
-            <li>Network routes to Issuer</li>
-            <li>Issuer validates PIN / CVV</li>
-            <li>Issuer checks balance</li>
-            <li>Approval or decline returned</li>
-            <li>Receipt printed</li>
+            <li>Card tapped/inserted/swiped at POS</li>
+            <li>POS sends authorization request to acquirer</li>
+            <li>Acquirer routes transaction via network</li>
+            <li>Issuer validates card & PIN/EMV data</li>
+            <li>CBS checks account balance</li>
+            <li>Amount blocked or debited</li>
+            <li>Approval returned to merchant</li>
           </ol>
         </div>
 
-        {/* ONLINE FLOW */}
+        {/* ATM FLOW */}
         <div className={styles.block}>
-          <h2>E-Commerce Debit Card Transaction</h2>
+          <h2>ATM Cash Withdrawal Flow</h2>
           <ol>
-            <li>Customer enters card details</li>
-            <li>Merchant sends data to Payment Gateway</li>
-            <li>Gateway forwards to Acquirer</li>
-            <li>Acquirer routes to Issuer</li>
-            <li>Issuer triggers OTP / authentication</li>
-            <li>Customer enters OTP</li>
-            <li>Issuer validates OTP and balance</li>
+            <li>Customer inserts debit card into ATM</li>
+            <li>PIN authentication performed</li>
+            <li>ATM sends transaction request to issuer</li>
+            <li>Issuer validates balance</li>
+            <li>Cash dispensed</li>
+            <li>Account debited instantly</li>
+          </ol>
+        </div>
+
+        {/* ONLINE */}
+        <div className={styles.block}>
+          <h2>Online / E-Commerce Transaction Flow</h2>
+          <ol>
+            <li>Customer enters card details online</li>
+            <li>OTP / 3D Secure authentication</li>
+            <li>Network routes request to issuer</li>
+            <li>Issuer validates & debits account</li>
             <li>Transaction approved or declined</li>
           </ol>
         </div>
 
-        {/* FAILURE CASES */}
+        {/* BALANCE */}
+        <div className={styles.block}>
+          <h2>Debit Card Balance Model</h2>
+          <ul>
+            <li>Balance = Bank account balance</li>
+            <li>No overdraft by default</li>
+            <li>Real-time ledger update</li>
+            <li>Immediate fund availability</li>
+          </ul>
+        </div>
+
+        {/* SECURITY */}
+        <div className={styles.block}>
+          <h2>Security & Controls</h2>
+          <ul>
+            <li>PIN based authentication</li>
+            <li>EMV chip protection</li>
+            <li>Daily ATM & POS limits</li>
+            <li>Geographic & channel controls</li>
+            <li>Fraud monitoring systems</li>
+          </ul>
+        </div>
+
+        {/* FAILURES */}
         <div className={styles.block}>
           <h2>Common Failure Scenarios</h2>
           <ul>
             <li>Insufficient balance</li>
             <li>Incorrect PIN</li>
-            <li>Network timeout</li>
-            <li>Issuer system down</li>
-            <li>Daily limit exceeded</li>
-          </ul>
-        </div>
-
-        {/* REVERSALS */}
-        <div className={styles.block}>
-          <h2>Reversals and Timeouts</h2>
-          <p>
-            If cash is not dispensed but the account is debited, a reversal
-            process is triggered. Reversals can be:
-          </p>
-          <ul>
-            <li>Auto-reversal (system driven)</li>
-            <li>Manual reversal (bank initiated)</li>
-            <li>Network-assisted reversal</li>
+            <li>Card blocked or expired</li>
+            <li>Network downtime</li>
           </ul>
         </div>
 
         {/* SETTLEMENT */}
         <div className={styles.block}>
-          <h2>Clearing and Settlement</h2>
+          <h2>Clearing & Settlement</h2>
           <p>
-            Authorization happens in real time, but settlement happens later.
-            Banks exchange transaction files, calculate net positions, and
-            transfer funds accordingly.
+            Debit card transactions follow a standard clearing and settlement
+            cycle where the issuer settles funds with the acquirer through the
+            payment network.
           </p>
           <ul>
-            <li>Transaction batching</li>
-            <li>Net settlement calculation</li>
-            <li>Interbank fund transfer</li>
-            <li>Reconciliation and reporting</li>
+            <li>T+1 or T+2 settlement</li>
+            <li>Issuer debits customer instantly</li>
+            <li>Merchant paid post settlement</li>
+          </ul>
+        </div>
+
+        {/* ADVANTAGES */}
+        <div className={styles.block}>
+          <h2>Advantages</h2>
+          <ul>
+            <li>No debt or interest</li>
+            <li>Direct control over spending</li>
+            <li>Wide acceptance</li>
+            <li>Lower fraud risk</li>
+          </ul>
+        </div>
+
+        {/* LIMITATIONS */}
+        <div className={styles.block}>
+          <h2>Limitations</h2>
+          <ul>
+            <li>Limited to available balance</li>
+            <li>No credit-building benefit</li>
+            <li>Disputes may take longer</li>
           </ul>
         </div>
 
@@ -193,10 +215,9 @@ export default function DebitPage() {
         <div className={styles.block}>
           <h2>Summary</h2>
           <p>
-            Debit card transactions involve multiple systems working together
-            in milliseconds. From terminal capture to issuer authorization and
-            final settlement, each step is critical for secure and reliable
-            payments.
+            Debit cards are the backbone of everyday digital payments, offering
+            secure, real-time access to bank funds while maintaining strong
+            control and minimal risk.
           </p>
         </div>
 
