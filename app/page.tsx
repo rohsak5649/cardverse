@@ -23,7 +23,8 @@ const sections = [
       { name: "Gift Card", link: "/cards/gift-card" },
       { name: "Payroll Card", link: "/cards/payroll-card" },
       { name: "Travel Card", link: "/cards/travel-prepaid" },
-      { name: "Forex Card", link: "/cards/forex-prepaid" }
+      { name: "Forex Card", link: "/cards/forex-prepaid" },
+      { name: "Meal Card", link: "/cards/meal-card" }
     ],
   },
   {
@@ -56,7 +57,7 @@ export default function Home() {
         </p>
 
         <span className={styles.credit}>
-          Developed by Rohan Sakhare
+          Developed by Rohan Avinash Sakhare
         </span>
       </section>
 
