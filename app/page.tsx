@@ -67,10 +67,7 @@ export default function Home() {
         </p>
 
         <p className={styles.disclaimer}>
-          Disclaimer: <strong>CardVerse</strong> is an educational platform.
-          This website does not issue cards and is not affiliated with any bank,
-          card network, or financial institution. All card types and transaction
-          flows are explained purely for learning and knowledge purposes.
+          Disclaimer: <strong>CardVerse</strong> is a conceptual product name for knowledge purposes only.
         </p>
 
         <span className={styles.credit}>
