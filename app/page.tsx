@@ -23,6 +23,7 @@ const sections = [
       { name: "Gift Card", link: "/cards/gift-card" },
       { name: "Payroll Card", link: "/cards/payroll-card" },
       { name: "Travel Card", link: "/cards/travel-prepaid" },
+      { name: "Forex Card", link: "/cards/forex-prepaid" }
     ],
   },
   {
