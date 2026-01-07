@@ -42,15 +42,18 @@ const sections = [
   ],
 },
   {
-    title: "Corporate & Business",
-    subtitle: "Enterprise, travel and expense management cards",
-    cards: [
-      { name: "Corporate Card", link: "#" },
-      { name: "Fleet Card", link: "#" },
-      { name: "Travel Card", link: "#" },
-      { name: "Purchasing Card (P-Card)", link: "#" },
-    ],
-  },
+  title: "Corporate & Business Cards",
+  subtitle: "Enterprise, travel, fleet and expense management cards",
+  cards: [
+    { name: "Corporate Card", link: "/cards/corporate-card" },
+    { name: "Fleet Card", link: "/cards/fleet-card" },
+    { name: "Travel Corporate Card", link: "/cards/travel-corporate-card" },
+    { name: "Purchasing Card (P-Card)", link: "/cards/purchasing-card" },
+    { name: "Expense Management Card", link: "/cards/expense-card" },
+    { name: "Vendor Payment Card", link: "/cards/vendor-card" },
+    { name: "Project-Based Card", link: "/cards/project-card" },
+  ],
+},
 ];
 
 export default function Home() {
