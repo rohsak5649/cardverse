@@ -22,6 +22,7 @@ const sections = [
       { name: "Non-Reloadable Prepaid", link: "/cards/non-reloadable-prepaid" },
       { name: "Gift Card", link: "/cards/gift-card" },
       { name: "Payroll Card", link: "/cards/payroll-card" },
+      { name: "Travel Card", link: "/cards/travel-prepaid" },
     ],
   },
   {
