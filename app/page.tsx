@@ -28,6 +28,20 @@ const sections = [
     ],
   },
   {
+  title: "Usage-Based Cards",
+  subtitle: "Cards designed for specific usage, channels and scenarios",
+  cards: [
+    { name: "Virtual Card", link: "/cards/virtual-card" },
+    { name: "E-Commerce Card", link: "/cards/ecommerce-card" },
+    { name: "Contactless Card", link: "/cards/contactless-card" },
+    { name: "Subscription Card", link: "/cards/subscription-card" },
+    { name: "Transit Card", link: "/cards/transit-card" },
+    { name: "Toll Card", link: "/cards/toll-card" },
+    { name: "Fuel Card", link: "/cards/fuel-card" },
+    { name: "Parking Card", link: "/cards/parking-card" },
+  ],
+},
+  {
     title: "Corporate & Business",
     subtitle: "Enterprise, travel and expense management cards",
     cards: [
